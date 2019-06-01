@@ -1,0 +1,36 @@
+/*1. create a variable called tablet-width and give it a value of 768px (standard width for a tablet)
+2. create a mixin and call it tablet
+3. nest a @media in it and assign pass $tablet-width variable as a value for min-width property
+4. give it the @content directive so we can pass our own values into the mixin
+5. create a variable called desktop-width and give it a value of 992px (standard width for a desktop)
+6. update the mixin and give it a max width of $desktop-width -1 - this ensures that the tablet media query will be everything from 768px up to 991px
+5. create a variable called large-desktop-width and give it a value of 1200px (standard width for a large desktop)
+6. create a mixin and call it desktop
+7. nest a @media in it and assign pass a min-width of $desktop-width and max value of $large-desktop-width -1
+8. give it the @content directive so we can pass our own values into the mixin
+*/
+$tablet-width: 768px;
+$desktop-width: 992px;
+$large-desktop-width: 1200px;
+
+@mixin tablet {
+    @media (min-width: $tablet-width) and (max-width: $desktop-width -1) {
+        @content
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-width) and (max-width: $large-desktop-width -1) {
+        @content
+    }
+}
+
+/*scss syntax for media queries
+1. add the selector (h1)
+2. add the media query and set the color to red
+in the css syntax, we first have to create the media query and then name the selector inside the media query, then set the color to red. scss is other way
+h1 {
+    @media (min-width: 1200px) {
+        color: red;
+    }
+}*/

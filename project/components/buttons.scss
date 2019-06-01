@@ -1,0 +1,21 @@
+.btn {
+    @extend %reset;
+
+    @include tablet {
+        font-size: 10px;
+    }
+
+    @include desktop {
+        font-size: 16px;
+    }
+}
+
+.btn-default {
+    @include button($red, 300px);
+}
+
+.btn-unicorn {
+    @include unicornify {
+        font-family: Helvetica;
+    }
+}
